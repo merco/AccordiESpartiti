@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChitarrApp.Android", "ChitarrApp\ChitarrApp.Android\ChitarrApp.Android.csproj", "{4DC2B810-A994-4351-90D3-18319AAD628C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChitarrApp", "ChitarrApp\ChitarrApp\ChitarrApp.csproj", "{B02BCAFB-B8F7-49A9-9633-E0CD6DEAE680}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DC2B810-A994-4351-90D3-18319AAD628C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DC2B810-A994-4351-90D3-18319AAD628C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DC2B810-A994-4351-90D3-18319AAD628C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4DC2B810-A994-4351-90D3-18319AAD628C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DC2B810-A994-4351-90D3-18319AAD628C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DC2B810-A994-4351-90D3-18319AAD628C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B02BCAFB-B8F7-49A9-9633-E0CD6DEAE680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B02BCAFB-B8F7-49A9-9633-E0CD6DEAE680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B02BCAFB-B8F7-49A9-9633-E0CD6DEAE680}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B02BCAFB-B8F7-49A9-9633-E0CD6DEAE680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B02BCAFB-B8F7-49A9-9633-E0CD6DEAE680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B02BCAFB-B8F7-49A9-9633-E0CD6DEAE680}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F137E70-A8BF-41EF-9ED5-47D4DFB2DA4C}
+	EndGlobalSection
+EndGlobal

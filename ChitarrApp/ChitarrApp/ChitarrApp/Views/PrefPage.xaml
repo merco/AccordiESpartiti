@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChitarrApp.Views.PrefPage"
+             Title="Preferiti">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black">
+            <ActivityIndicator IsVisible="false" x:Name="Aind" IsRunning="true" Color="Red"  BackgroundColor="Black"/>
+
+
+            <ListView x:Name="MainLW" HasUnevenRows="True" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" SelectionMode="None"  BackgroundColor="Black" ItemTapped="MainLW_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding UiMainText}"  Detail="{Binding UiDetailText}"  />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

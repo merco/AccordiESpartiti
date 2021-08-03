@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChitarrApp.Views.ItemsPage"
+             Title="Cerca"
+             xmlns:local="clr-namespace:ChitarrApp.ViewModels"  
+             xmlns:model="clr-namespace:ChitarrApp.Models"  
+             x:Name="BrowseItemsPage"
+
+             Shell.NavBarIsVisible="True"
+             >
+
+    
+    <!--
+      x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
+      https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
+    -->
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black" VerticalOptions="FillAndExpand" Padding="0">
+            <StackLayout BackgroundColor="Black" VerticalOptions="CenterAndExpand" Padding="40" Spacing="30">
+                <ActivityIndicator IsVisible="false" x:Name="Aind" IsRunning="true" Color="Red"  BackgroundColor="Black"/>
+               
+                <RadioButton x:Name="rba" IsChecked="false" FontSize="20" Content="Autore" GroupName="cerca" TextColor="White"  HorizontalOptions="CenterAndExpand" CheckedChanged="rba_CheckedChanged"></RadioButton>
+                <RadioButton x:Name="rbc"  IsChecked="True" FontSize="20" Content="Canzone" GroupName="cerca" TextColor="White" HorizontalOptions="CenterAndExpand" CheckedChanged="rba_CheckedChanged"></RadioButton>
+                <Editor x:Name="txtEdit" PlaceholderColor="Gray" Placeholder="Testo da cercare..." IsSpellCheckEnabled="False" TextChanged="txtEdit_TextChanged"></Editor>
+                <ListView x:Name="MainLW" HasUnevenRows="True" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" SelectionMode="None" ItemTapped="MainLW_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding UiMainText}"  Detail="{Binding UiDetailText}"  />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

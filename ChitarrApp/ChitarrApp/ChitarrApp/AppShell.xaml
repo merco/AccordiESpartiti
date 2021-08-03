@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:ChitarrApp.Views"
+       Title="ChitarrApp 1.0"
+      
+       x:Class="ChitarrApp.AppShell">
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+    
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar x:Name="main_tab_bar" Route="main">
+        <ShellContent Title="Home" Icon="home.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Title="Preferiti" Icon="fav.png" Route="PrefPage" ContentTemplate="{DataTemplate local:PrefPage}"/>
+        <ShellContent x:Name="CercaPage" Title="Cerca" Icon="search1.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
+        <ShellContent Title="Archivio" Icon="database.png" Route="BrowsePage" ContentTemplate="{DataTemplate local:BrowsePage}"/>
+        <ShellContent Title="JukeBox" Icon="qst.png" Route="RndPage" ContentTemplate="{DataTemplate local:RndPage}"/>
+    </TabBar>
+
+    <!--
+        If you would like to navigate to this content you can do so by calling
+        await Shell.Current.GoToAsync("//LoginPage");
+    -->
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+        <ShellContent Route="SongPage" ContentTemplate="{DataTemplate local:SongPage}" />
+        <ShellContent Route="CercaPage"  ContentTemplate="{DataTemplate local:ItemsPage}" />
+        <ShellContent Route="BrowsePage" ContentTemplate="{DataTemplate local:BrowsePage}" />
+    </TabBar>
+
+
+</Shell>

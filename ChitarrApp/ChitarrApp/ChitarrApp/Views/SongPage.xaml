@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:ChitarrApp.Controls"
+             x:Class="ChitarrApp.Views.SongPage"
+             Shell.TabBarIsVisible="False"
+             
+              >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="tranm.png" x:Name="tranm" Clicked="btnMeno_Clicked"/>
+        <ToolbarItem IconImageSource="tranp.png" x:Name="tranp" Clicked="btnPiu_Clicked"/>
+
+
+        <ToolbarItem IconImageSource="plus.png" x:Name="btnI"  Clicked="btnI_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+
+
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+
+            </Grid.RowDefinitions>
+<!--
+            <StackLayout Orientation="Horizontal" Padding="10,10,10,5"  Grid.Row="0">
+
+                <Button x:Name="Cmeno" HorizontalOptions="End" Text="C -" VerticalOptions="Center" Clicked="Cmeno_Clicked"></Button>
+                <Label x:Name="info" Text="..." TextColor="Black" FontSize="Large" FontAttributes="Bold"
+                      
+                VerticalOptions="Center" 
+                HorizontalOptions="CenterAndExpand">
+
+                </Label>
+                <Button x:Name="Cpiu" HorizontalOptions="Start"  Text="C +" VerticalOptions="Center" Clicked="Cpiu_Clicked"></Button>
+            </StackLayout>
+-->
+
+            <controls:MyListView x:Name="MainLW" HasUnevenRows="True" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" SelectionMode="None" BackgroundColor="Black" ItemTapped="MainLW_ItemTapped"  Grid.Row="1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <Label Text="{Binding songRowString}" FontSize="{Binding songRowFontSz}" FontAttributes="{Binding songRowFontAtt}" FontFamily="monospace" TextColor="{Binding songRowColor}"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </controls:MyListView>
+
+
+            <Grid Grid.Row="1" x:Name="menu" IsVisible="false" VerticalOptions="Center" BackgroundColor="White" HorizontalOptions="CenterAndExpand" Padding="10" RowSpacing="10" ColumnSpacing="10" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                   
+                </Grid.ColumnDefinitions>
+
+                <Button   Text="Prontuario (pdf)" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Clicked="btnA_Clicked"></Button>
+
+                <Button  x:Name="Cmeno" Text="CAR -" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="0" Clicked="Cmeno_Clicked"></Button>
+                <Button x:Name="Cpiu"   Text="CAR +" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="1" Clicked="Cpiu_Clicked"></Button>
+                <Button x:Name="btnPref"  Text="Preferita" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Clicked="Button_Clicked_1"></Button>
+                
+                <Button    Text="SCARICA MP3" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Grid.Row="3" Grid.Column="0"   Grid.ColumnSpan="2" Clicked="Button_Clicked_mp3"></Button>
+                <Button    Text="CONDIVIDI" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Grid.Row="4" Grid.Column="1"  Clicked="Button_Clicked_Send"></Button>
+                <Button    Text="YOU TUBE" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Grid.Row="4" Grid.Column="0" Clicked="Button_Clicked_YT"></Button>
+                <Button    Text="CHIUDI" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Clicked="Button_Clicked"></Button>
+              
+            </Grid>
+
+            <ActivityIndicator Grid.Row="1"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="false" x:Name="Aind" IsRunning="true" Color="Red"  BackgroundColor="Black"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
